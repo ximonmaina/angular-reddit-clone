@@ -16,4 +16,12 @@ export class AppComponent {
       new Article('Angular Homepage', 'http://angular.io', 1),
     ];
   }
+
+  // adds the new Article instance to array of articles
+  // and clears the input field values
+  addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
+    console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+    this.articles.push(new Article(title.value, link.value, 0));
+    return false;
+  }
 }
